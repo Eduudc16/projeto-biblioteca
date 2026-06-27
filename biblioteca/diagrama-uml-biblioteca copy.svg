@@ -1,0 +1,120 @@
+<svg width="810" height="800" viewBox="0 0 810 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+      .ttl  { font-size: 24px; font-weight: 800; fill: #1E293B; }
+      .sub  { font-size: 12px; font-weight: 500; fill: #64748B; letter-spacing: .5px; }
+      .cls  { font-size: 16px; font-weight: 800; fill: #FFFFFF; letter-spacing: .3px; }
+      .m    { font-size: 12.5px; dominant-baseline: central; }
+      .pub  { font-weight: 800; fill: #16A34A; }
+      .priv { font-weight: 800; fill: #DC2626; }
+      .rel  { fill: none; stroke: #64748B; stroke-width: 1.6; }
+      .reld { fill: none; stroke: #64748B; stroke-width: 1.6; stroke-dasharray: 7 4; }
+      .mult { font-size: 11px; font-weight: 600; fill: #475569; }
+      .lbl  { font-size: 11.5px; font-weight: 600; fill: #475569; }
+    </style>
+    <marker id="arrow" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M2 1.5L9 6L2 10.5" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="diamond" viewBox="0 0 18 12" refX="2" refY="6" markerWidth="17" markerHeight="12" orient="auto">
+      <path d="M2 6L9 2L16 6L9 10Z" fill="#FFFFFF" stroke="#64748B" stroke-width="1.4" stroke-linejoin="round"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0F172A" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="810" height="800" fill="#F8FAFC"/>
+
+  <!-- TÍTULO -->
+  <text class="ttl" x="405" y="34" text-anchor="middle">Sistema de Biblioteca</text>
+  <text class="sub" x="405" y="53" text-anchor="middle">DIAGRAMA DE CLASSES · UML</text>
+
+  <!-- LEGENDA -->
+  <rect x="24" y="78" width="214" height="80" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="40" y="100" font-size="12" font-weight="800" fill="#334155">Legenda</text>
+  <line class="reld" x1="40" y1="120" x2="84" y2="120" marker-end="url(#arrow)"/>
+  <text class="lbl" x="94" y="123">dependência (&#171;usa&#187;)</text>
+  <polyline class="rel" points="40,144 84,144" marker-start="url(#diamond)"/>
+  <text class="lbl" x="94" y="147">agregação (tem)</text>
+
+  <!-- ===================== MAIN ===================== -->
+  <rect x="290" y="70" width="240" height="104" rx="12" fill="#EEF0FF" stroke="#6366F1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="290" y="70" width="240" height="38" rx="12" fill="#6366F1"/>
+  <rect x="290" y="82" width="240" height="26" fill="#6366F1"/>
+  <text class="cls" x="410" y="93" text-anchor="middle">Main</text>
+  <line x1="290" y1="108" x2="530" y2="108" stroke="#6366F1" stroke-opacity="0.35"/>
+  <text class="m" x="304" y="123"><tspan class="priv">-&#160;</tspan><tspan fill="#312E81">biblioteca : Biblioteca</tspan></text>
+  <text class="m" x="304" y="141"><tspan class="priv">-&#160;</tspan><tspan fill="#312E81">scanner : Scanner</tspan></text>
+  <line x1="290" y1="150" x2="530" y2="150" stroke="#6366F1" stroke-opacity="0.35"/>
+  <text class="m" x="304" y="165"><tspan class="pub">+&#160;</tspan><tspan fill="#312E81" text-decoration="underline">main(args : String[]) : void</tspan></text>
+
+  <!-- ===================== BIBLIOTECA ===================== -->
+  <rect x="250" y="250" width="320" height="230" rx="12" fill="#F4F0FE" stroke="#8B5CF6" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="250" y="250" width="320" height="38" rx="12" fill="#8B5CF6"/>
+  <rect x="250" y="262" width="320" height="26" fill="#8B5CF6"/>
+  <text class="cls" x="410" y="273" text-anchor="middle">Biblioteca</text>
+  <line x1="250" y1="288" x2="570" y2="288" stroke="#8B5CF6" stroke-opacity="0.35"/>
+  <text class="m" x="264" y="303"><tspan class="priv">-&#160;</tspan><tspan fill="#4C1D95">livros : List&lt;Livro&gt;</tspan></text>
+  <text class="m" x="264" y="321"><tspan class="priv">-&#160;</tspan><tspan fill="#4C1D95">usuarios : List&lt;Usuario&gt;</tspan></text>
+  <line x1="250" y1="330" x2="570" y2="330" stroke="#8B5CF6" stroke-opacity="0.35"/>
+  <text class="m" x="264" y="345"><tspan class="pub">+&#160;</tspan><tspan fill="#4C1D95">cadastrarLivro(titulo, autor) : Livro</tspan></text>
+  <text class="m" x="264" y="363"><tspan class="pub">+&#160;</tspan><tspan fill="#4C1D95">removerLivro(id) : boolean</tspan></text>
+  <text class="m" x="264" y="381"><tspan class="pub">+&#160;</tspan><tspan fill="#4C1D95">listarLivros() : List&lt;Livro&gt;</tspan></text>
+  <text class="m" x="264" y="399"><tspan class="pub">+&#160;</tspan><tspan fill="#4C1D95">cadastrarUsuario(nome, telefone) : Usuario</tspan></text>
+  <text class="m" x="264" y="417"><tspan class="pub">+&#160;</tspan><tspan fill="#4C1D95">removerUsuario(id) : boolean</tspan></text>
+  <text class="m" x="264" y="435"><tspan class="pub">+&#160;</tspan><tspan fill="#4C1D95">listarUsuarios() : List&lt;Usuario&gt;</tspan></text>
+  <text class="m" x="264" y="453"><tspan class="pub">+&#160;</tspan><tspan fill="#4C1D95">alugarLivro(idLivro, idUsuario) : String</tspan></text>
+  <text class="m" x="264" y="471"><tspan class="pub">+&#160;</tspan><tspan fill="#4C1D95">devolverLivro(idLivro) : String</tspan></text>
+
+  <!-- ===================== LIVRO ===================== -->
+  <rect x="70" y="560" width="270" height="194" rx="12" fill="#E7FAF4" stroke="#0D9488" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="70" y="560" width="270" height="38" rx="12" fill="#0D9488"/>
+  <rect x="70" y="572" width="270" height="26" fill="#0D9488"/>
+  <text class="cls" x="205" y="583" text-anchor="middle">Livro</text>
+  <line x1="70" y1="598" x2="340" y2="598" stroke="#0D9488" stroke-opacity="0.35"/>
+  <text class="m" x="84" y="613"><tspan class="priv">-&#160;</tspan><tspan fill="#115E4A">id : int</tspan></text>
+  <text class="m" x="84" y="631"><tspan class="priv">-&#160;</tspan><tspan fill="#115E4A">titulo : String</tspan></text>
+  <text class="m" x="84" y="649"><tspan class="priv">-&#160;</tspan><tspan fill="#115E4A">autor : String</tspan></text>
+  <text class="m" x="84" y="667"><tspan class="priv">-&#160;</tspan><tspan fill="#115E4A">alugado : boolean</tspan></text>
+  <text class="m" x="84" y="685"><tspan class="priv">-&#160;</tspan><tspan fill="#115E4A">usuarioId : int</tspan></text>
+  <line x1="70" y1="694" x2="340" y2="694" stroke="#0D9488" stroke-opacity="0.35"/>
+  <text class="m" x="84" y="709"><tspan class="pub">+&#160;</tspan><tspan fill="#115E4A">paraLinha() : String</tspan></text>
+  <text class="m" x="84" y="727"><tspan class="pub">+&#160;</tspan><tspan fill="#115E4A" text-decoration="underline">daLinha(linha) : Livro</tspan></text>
+  <text class="m" x="84" y="745"><tspan class="pub">+&#160;</tspan><tspan fill="#115E4A">exibir() : String</tspan></text>
+
+  <!-- ===================== USUARIO ===================== -->
+  <rect x="470" y="560" width="270" height="158" rx="12" fill="#FFF6E6" stroke="#EA8A0B" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="470" y="560" width="270" height="38" rx="12" fill="#EA8A0B"/>
+  <rect x="470" y="572" width="270" height="26" fill="#EA8A0B"/>
+  <text class="cls" x="605" y="583" text-anchor="middle">Usuario</text>
+  <line x1="470" y1="598" x2="740" y2="598" stroke="#EA8A0B" stroke-opacity="0.35"/>
+  <text class="m" x="484" y="613"><tspan class="priv">-&#160;</tspan><tspan fill="#8A4B0F">id : int</tspan></text>
+  <text class="m" x="484" y="631"><tspan class="priv">-&#160;</tspan><tspan fill="#8A4B0F">nome : String</tspan></text>
+  <text class="m" x="484" y="649"><tspan class="priv">-&#160;</tspan><tspan fill="#8A4B0F">telefone : String</tspan></text>
+  <line x1="470" y1="658" x2="740" y2="658" stroke="#EA8A0B" stroke-opacity="0.35"/>
+  <text class="m" x="484" y="673"><tspan class="pub">+&#160;</tspan><tspan fill="#8A4B0F">paraLinha() : String</tspan></text>
+  <text class="m" x="484" y="691"><tspan class="pub">+&#160;</tspan><tspan fill="#8A4B0F" text-decoration="underline">daLinha(linha) : Usuario</tspan></text>
+  <text class="m" x="484" y="709"><tspan class="pub">+&#160;</tspan><tspan fill="#8A4B0F">exibir() : String</tspan></text>
+
+  <!-- ===================== RELAÇÕES ===================== -->
+  <!-- Main ..> Biblioteca -->
+  <line class="reld" x1="410" y1="174" x2="410" y2="248" marker-end="url(#arrow)"/>
+  <rect x="384" y="202" width="52" height="16" fill="#F8FAFC"/>
+  <text class="lbl" x="410" y="214" text-anchor="middle">&#171;usa&#187;</text>
+
+  <!-- Biblioteca agrega Livro -->
+  <polyline class="rel" points="330,480 330,520 205,520 205,558" marker-start="url(#diamond)"/>
+  <text class="mult" x="318" y="496" text-anchor="end">1</text>
+  <text class="mult" x="217" y="548">0..*</text>
+
+  <!-- Biblioteca agrega Usuario -->
+  <polyline class="rel" points="490,480 490,520 605,520 605,558" marker-start="url(#diamond)"/>
+  <text class="mult" x="502" y="496">1</text>
+  <text class="mult" x="617" y="548">0..*</text>
+
+  <!-- Livro ..> Usuario (usuarioId) -->
+  <line class="reld" x1="340" y1="636" x2="468" y2="636" marker-end="url(#arrow)"/>
+  <rect x="356" y="618" width="96" height="16" fill="#F8FAFC"/>
+  <text class="lbl" x="404" y="630" text-anchor="middle">&#171;usuarioId&#187;</text>
+</svg>

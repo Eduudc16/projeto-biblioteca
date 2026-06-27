@@ -1,0 +1,7 @@
+1;Dom Casmurro;Machado de Assis;DISPONIVEL;0
+2;O Cortiço;Aluísio Azevedo;DISPONIVEL;0
+3;Iracema;José de Alencar;DISPONIVEL;0
+4;Vidas Secas;Graciliano Ramos;DISPONIVEL;0
+5;O Guarani;José de Alencar;DISPONIVEL;0
+6;Memórias Póstumas;Machado de Assis;DISPONIVEL;0
+7;Eduardo;ada;DISPONIVEL;0
